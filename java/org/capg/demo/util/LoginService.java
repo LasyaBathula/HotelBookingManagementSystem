@@ -2,6 +2,7 @@ package org.capg.demo.util;
 
 public interface LoginService {
 
-	String validateCredentials(Object obj);
- 
+	public String validateCredentials(Object obj);
+
+	String signOut(Object obj);
 }
