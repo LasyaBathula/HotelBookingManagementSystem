@@ -16,20 +16,15 @@ public class LoginDaoImpl implements LoginDao {
 	@PersistenceContext
 	EntityManager em;
 		
-	@Override
-	public String signOut(Object obj) {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
+	
 	@Override
 	public String validateCredintals(Object obj) {
 		// TODO Auto-generated method stub
 		if (obj instanceof Admin) {
 			Admin a = (Admin) obj;
 		
-			TypedQuery<Admin> q =  em.createQuery("select a from Admin a where a.admin_name=:aname and a.password=:pass",Admin.class);
-			q.setParameter("uname", a.getAdmin_name());
+			TypedQuery<Admin> q =  em.createQuery("select a from Admin a where a.admin_id=:aid and a.password=:pass",Admin.class);
+			q.setParameter("aid", a.getAdmin_id());
 			q.setParameter("pass", a.getPassword());
 			List<Admin> adminList =  q.getResultList();
 			if (adminList.size() > 0) {
@@ -38,9 +33,9 @@ public class LoginDaoImpl implements LoginDao {
 			else {
 				return "Invalid";
 		}
-		}
-		return "no acc";
 	}
+		return null;
 
+}
 }
 

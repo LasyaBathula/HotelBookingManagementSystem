@@ -9,17 +9,11 @@ public class LoginServiceImpl implements LoginService {
 	@Autowired
 	LoginDao ld;
 
+	@Override
+	public String validateCredintals(Object obj) {
+		// TODO Auto-generated method stub
+		return ld.validateCredintals(obj);
+	}
 
 	
-	@Override
-	public String signOut(Object obj) {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	@Override
-	public String validateCredintials(Object obj) {
-		// TODO Auto-generated method stub
-		return null;
-	}
 }

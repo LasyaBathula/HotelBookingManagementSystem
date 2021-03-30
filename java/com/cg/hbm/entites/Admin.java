@@ -3,6 +3,7 @@ package com.cg.hbm.entites;
 import javax.persistence.Entity;
 
 
+
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
@@ -14,16 +15,11 @@ import javax.persistence.Table;
 public class Admin {
 	
     @Id
-	@GeneratedValue(strategy = GenerationType.AUTO)
+	
 	private int admin_id;
 	private String admin_name;
 	private String password;
-	public Admin(int admin_id, String admin_name, String password) {
-		super();
-		this.admin_id = admin_id;
-		this.admin_name = admin_name;
-		this.password = password;
-	}
+	
 
 	public Admin() {
 
@@ -52,6 +48,11 @@ public class Admin {
 	public void setPassword(String password) {
 		this.password = password;
 	}
-
+	public Admin(int admin_id, String admin_name, String password) {
+		super();
+		this.admin_id = admin_id;
+		this.admin_name = admin_name;
+		this.password = password;
+	}
 	
 }
